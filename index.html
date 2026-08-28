@@ -13,22 +13,20 @@
 </head>
 <body class="bg-stone-50 text-stone-800">
 
-    <!-- Header / Navigation -->
     <header class="bg-white/90 backdrop-blur-md border-b border-stone-200 py-4 px-6 fixed top-0 left-0 right-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="#home" id="logo-home" class="serif text-xl font-bold tracking-wider">TUDU STUDIO</a>
+            <a href="/home" id="logo-home" class="serif text-xl font-bold tracking-wider">TUDU STUDIO</a>
             <nav class="space-x-8 text-sm font-medium uppercase tracking-widest text-stone-600 hidden md:flex">
-                <a href="#about" class="hover:text-amber-600 transition">Về tớ</a>
-                <a href="#services" class="hover:text-amber-600 transition">Dịch vụ</a>
-                <a href="#gallery" class="hover:text-amber-600 transition">Ảnh tớ chụp</a>
-                <a href="#contact" class="hover:text-amber-600 transition">Liên hệ</a>
+                <a href="/home/about" class="nav-link hover:text-amber-600 transition" data-target="about">Về tớ</a>
+                <a href="/home/services" class="nav-link hover:text-amber-600 transition" data-target="services">Dịch vụ</a>
+                <a href="/home/gallery" class="nav-link hover:text-amber-600 transition" data-target="gallery">Ảnh tớ chụp</a>
+                <a href="/home/contact" class="nav-link hover:text-amber-600 transition" data-target="contact">Liên hệ</a>
             </nav>
-            <a href="#contact" class="bg-stone-900 text-white text-xs uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-stone-800 transition">Đặt lịch ngay</a>
+            <a href="/home/contact" class="nav-link bg-stone-900 text-white text-xs uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-stone-800 transition" data-target="contact">Đặt lịch ngay</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section / Banner (Gắn id="home" để làm mốc trang chủ) -->
         <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden pt-24">
             <img src="img/banner.jpg" 
                  alt="Tudu Studio Banner" class="absolute inset-0 w-full h-full object-cover object-top">
@@ -37,12 +35,11 @@
             <div class="relative text-center text-white px-4 max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-6xl mb-4 italic serif">Lưu giữ thanh xuân rực rỡ</h1>
                 <p class="text-sm md:text-base font-light tracking-[0.2em] uppercase mb-8">Ghi lại kỉ niệm của bạn theo cách trọn vẹn nhất</p>
-                <a href="#gallery" class="bg-white text-stone-900 px-8 py-3.5 rounded-full font-medium hover:bg-amber-50 transition tracking-wider text-xs uppercase inline-block">Xem ảnh mẫu</a>
+                <a href="/home/gallery" class="nav-link bg-white text-stone-900 px-8 py-3.5 rounded-full font-medium hover:bg-amber-50 transition tracking-wider text-xs uppercase inline-block" data-target="gallery">Xem ảnh mẫu</a>
             </div>
         </section>
 
-        <!-- Về Tớ / About Section -->
-        <section id="about" class="max-w-5xl mx-auto py-24 px-6">
+        <section id="about" class="max-w-5xl mx-auto py-20 px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                 <div class="w-full aspect-[4/5] bg-stone-200 overflow-hidden shadow-sm">
@@ -62,27 +59,28 @@
             </div>
         </section>
 
-        <!-- Dịch vụ trọng tâm -->
-        <section id="services" class="bg-white py-20 border-y border-stone-100">
+        <section id="services" class="bg-white py-16 border-y border-stone-100">
             <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl mt-3 serif">Dịch vụ</h2>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
                     <div class="bg-stone-50 p-8 border border-stone-200 flex flex-col justify-between">
                         <div>
-                            <h3 class="serif text-2xl mb-3">Chụp Ảnh Kỷ Yếu (Cá nhân / Nhóm)</h3>
+                            <h3 class="serif text-2xl mb-2">Chụp Ảnh Kỷ Yếu</h3>
+                            <p class="text-lg font-normal text-stone-600 mb-4">(Cá nhân / Nhóm / Lớp)</p>
                             <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">Dành cho cá nhân hoặc nhóm bạn thân. Bắt trọn từng khoảnh khắc thanh xuân rạng rỡ.</p>
                         </div>
-                        <a href="#contact" class="text-xs uppercase tracking-widest font-bold text-amber-600 hover:underline">Nhận tư vấn báo giá →</a>
+                        <a href="/home/contact" class="nav-link text-xs uppercase tracking-widest font-bold text-amber-600 hover:underline" data-target="contact">Nhận tư vấn báo giá →</a>
                     </div>
                     <div class="bg-stone-50 p-8 border border-stone-200 flex flex-col justify-between">
                         <div>
-                            <h3 class="serif text-2xl mb-3">Chụp Ảnh Tốt Nghiệp</h3>
+                            <h3 class="serif text-2xl mb-2">Chụp Ảnh Tốt Nghiệp</h3>
+                            <p class="text-lg font-normal text-stone-600 mb-4">(Cá nhân / Nhóm)</p>
                             <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">Ghi dấu cột mốc nhận bằng danh giá tại trường đại học cùng gia đình và người thương với góc máy tinh tế, chỉn chu.</p>
                         </div>
-                        <a href="#contact" class="text-xs uppercase tracking-widest font-bold text-amber-600 hover:underline">Nhận tư vấn báo giá →</a>
+                        <a href="/home/contact" class="nav-link text-xs uppercase tracking-widest font-bold text-amber-600 hover:underline" data-target="contact">Nhận tư vấn báo giá →</a>
                     </div>
                 </div>
 
@@ -92,19 +90,18 @@
                             <h3 class="serif text-2xl mb-3">Chụp Ảnh Concept</h3>
                             <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">Thỏa sức thể hiện chất riêng qua các ý tưởng sáng tạo độc bản, biến hóa đa dạng phong cách từ nghệ thuật, nàng thơ đến cá tính.</p>
                         </div>
-                        <a href="#contact" class="text-xs uppercase tracking-widest font-bold text-amber-600 hover:underline">Nhận tư vấn báo giá →</a>
+                        <a href="/home/contact" class="nav-link text-xs uppercase tracking-widest font-bold text-amber-600 hover:underline" data-target="contact">Nhận tư vấn báo giá →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Gallery -->
-        <section id="gallery" class="py-24 max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
+        <section id="gallery" class="py-20 max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl mt-3 serif">Ảnh tớ chụp</h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]">
                     <img src="img/mau1.jpg" alt="Ảnh kỷ yếu Tudu Studio 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                 </div>
@@ -134,16 +131,14 @@
             </div>
         </section>
 
-        <!-- Kết nối & Mạng xã hội -->
-        <section id="contact" class="bg-white py-24 border-t border-stone-100">
+        <section id="contact" class="bg-white py-20 border-t border-stone-100">
             <div class="max-w-4xl mx-auto px-6 text-center">
                 <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic">Kết nối</span>
                 <h2 class="text-3xl md:text-4xl mt-3 serif">Trò chuyện cùng Tudu Studio</h2>
-                <p class="text-stone-500 text-sm font-light mt-3 max-w-lg mx-auto mb-12">Liên hệ cho Tudu ngay để được tư vấn và hỗ trợ. Cũng như là đặt lịch hẹn với mức giá ưu đãi nhất nhé!</p>
+                <p class="text-stone-500 text-sm font-light mt-3 max-w-lg mx-auto mb-10">Liên hệ cho Tudu ngay để được tư vấn và hỗ trợ. Cũng như là đặt lịch hẹn với mức giá ưu đãi nhất nhé!</p>
 
                 <div class="flex justify-center items-center gap-12 md:gap-16">
                     
-                    <!-- Facebook -->
                     <a href="https://www.facebook.com/ntd.606/" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" class="w-full h-full drop-shadow-sm rounded-2xl object-contain">
@@ -151,7 +146,6 @@
                         <span class="mt-2 text-[10px] md:text-xs uppercase tracking-widest font-medium text-stone-500 group-hover:text-stone-900 transition">Facebook</span>
                     </a>
 
-                    <!-- Zalo -->
                     <a href="https://zalo.me/0979807919" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="w-full h-full drop-shadow-sm rounded-2xl object-contain">
@@ -159,7 +153,6 @@
                         <span class="mt-2 text-[10px] md:text-xs uppercase tracking-widest font-medium text-stone-500 group-hover:text-stone-900 transition">Zalo</span>
                     </a>
 
-                    <!-- TikTok -->
                     <a href="https://www.tiktok.com/@ntd606_" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
                             <svg class="w-full h-full drop-shadow-sm rounded-2xl" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +165,6 @@
                         <span class="mt-2 text-[10px] md:text-xs uppercase tracking-widest font-medium text-stone-500 group-hover:text-stone-900 transition">TikTok</span>
                     </a>
 
-                    <!-- Instagram -->
                     <a href="https://www.instagram.com/ntd_606/" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-full h-full drop-shadow-sm rounded-2xl object-contain">
@@ -185,50 +177,59 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-stone-900 text-stone-400 py-12 px-6 text-center text-sm">
-        <div class="max-w-6xl mx-auto space-y-4">
-            <p class="serif text-xl text-white tracking-widest">TUDU STUDIO</p>
-            <p>Hotline: 0979 807 919 | Email: dung.661999@gmail.com</p>
-            <p>165 Dương Quảng Hàm, Cầu Giấy, Hà Nội</p>
-            <p class="text-xs text-stone-600 pt-4 border-t border-stone-800">&copy; 2026 Tudu Studio. All rights reserved.</p>
+    <footer class="bg-stone-900 text-stone-400 py-8 px-6 text-center text-sm">
+        <div class="max-w-6xl mx-auto space-y-3">
+            <p class="serif text-lg text-white tracking-widest">TUDU STUDIO</p>
+            <p class="text-xs md:text-sm">Hotline: 0979 807 919 | Email: dung.661999@gmail.com</p>
+            <p class="text-xs md:text-sm">165 Dương Quảng Hàm, Cầu Giấy, Hà Nội</p>
+            <p class="text-[11px] text-stone-600 pt-3 border-t border-stone-800">&copy; 2026 Tudu Studio. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Script tùy chỉnh đường dẫn dạng /home, /home/about, /home/services... -->
     <script>
-        // Khi vừa vào trang (nếu URL đang ở gốc /index.html hoặc chưa có /home), tự động ép URL hiển thị thành /home
+        // Hàm cuộn và đổi URL
+        function navigateTo(path, scrollInstant = false) {
+            let targetId = 'home';
+            if (path.includes('/about')) targetId = 'about';
+            else if (path.includes('/services')) targetId = 'services';
+            else if (path.includes('/gallery')) targetId = 'gallery';
+            else if (path.includes('/contact')) targetId = 'contact';
+
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: scrollInstant ? 'auto' : 'smooth' });
+            }
+        }
+
+        // Bắt sự kiện khi load trang lần đầu tiên (hoặc F5 tại đường dẫn /home/about)
         window.addEventListener('DOMContentLoaded', () => {
-            if (!window.location.pathname.includes('home')) {
+            const currentPath = window.location.pathname;
+            if (currentPath === '/' || currentPath === '') {
                 history.replaceState(null, null, '/home');
+                navigateTo('/home', true);
+            } else {
+                navigateTo(currentPath, true);
             }
         });
 
-        // Xử lý khi bấm vào các link menu hoặc logo
-        document.querySelectorAll('header nav a, a[href^="#"], #logo-home').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetHref = this.getAttribute('href');
-
-                // Nếu bấm vào Logo hoặc nút về trang chủ
-                if (this.id === 'logo-home' || targetHref === '#home') {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    history.pushState(null, null, '/home');
-                    return;
-                }
-
-                // Nếu bấm vào các mục menu khác (#about, #services, #contact...)
-                if (targetHref && targetHref.startsWith('#')) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(targetHref);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                        // Cập nhật URL thành dạng /home/about, /home/services...
-                        const sectionName = targetHref.replace('#', '');
-                        history.pushState(null, null, `/home/${sectionName}`);
-                    }
+        // Xử lý khi người dùng bấm vào các nút điều hướng trên menu / logo
+        document.querySelectorAll('.nav-link, #logo-home').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetPath = this.getAttribute('href');
+                const targetId = this.getAttribute('data-target') || (targetPath.includes('about') ? 'about' : targetPath.includes('services') ? 'services' : targetPath.includes('gallery') ? 'gallery' : targetPath.includes('contact') ? 'contact' : 'home');
+                
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, null, targetPath);
                 }
             });
+        });
+
+        // Xử lý khi người dùng bấm nút Back / Forward trên trình duyệt
+        window.addEventListener('popstate', () => {
+            navigateTo(window.location.pathname, false);
         });
     </script>
 
