@@ -187,7 +187,6 @@
     </footer>
 
     <script>
-        // Hàm cuộn và đổi URL
         function navigateTo(path, scrollInstant = false) {
             let targetId = 'home';
             if (path.includes('/about')) targetId = 'about';
@@ -201,7 +200,6 @@
             }
         }
 
-        // Bắt sự kiện khi load trang lần đầu tiên (hoặc F5 tại đường dẫn /home/about)
         window.addEventListener('DOMContentLoaded', () => {
             const currentPath = window.location.pathname;
             if (currentPath === '/' || currentPath === '') {
@@ -212,7 +210,6 @@
             }
         });
 
-        // Xử lý khi người dùng bấm vào các nút điều hướng trên menu / logo
         document.querySelectorAll('.nav-link, #logo-home').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -227,7 +224,6 @@
             });
         });
 
-        // Xử lý khi người dùng bấm nút Back / Forward trên trình duyệt
         window.addEventListener('popstate', () => {
             navigateTo(window.location.pathname, false);
         });
