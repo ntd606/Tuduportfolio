@@ -16,7 +16,7 @@
     <!-- Header / Navigation -->
     <header class="bg-white/90 backdrop-blur-md border-b border-stone-200 py-4 px-6 fixed top-0 left-0 right-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="#" class="serif text-xl font-bold tracking-wider">TUDU STUDIO</a>
+            <a href="#home" id="logo-home" class="serif text-xl font-bold tracking-wider">TUDU STUDIO</a>
             <nav class="space-x-8 text-sm font-medium uppercase tracking-widest text-stone-600 hidden md:flex">
                 <a href="#about" class="hover:text-amber-600 transition">Về tớ</a>
                 <a href="#services" class="hover:text-amber-600 transition">Dịch vụ</a>
@@ -28,8 +28,8 @@
     </header>
 
     <main>
-        <!-- Hero Section / Banner -->
-        <section class="relative h-screen flex items-center justify-center overflow-hidden pt-24">
+        <!-- Hero Section / Banner (Gắn id="home" để làm mốc trang chủ) -->
+        <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden pt-24">
             <img src="img/banner.jpg" 
                  alt="Tudu Studio Banner" class="absolute inset-0 w-full h-full object-cover object-top">
             <div class="absolute inset-0 bg-black/40"></div>
@@ -194,6 +194,43 @@
             <p class="text-xs text-stone-600 pt-4 border-t border-stone-800">&copy; 2026 Tudu Studio. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Script tùy chỉnh đường dẫn dạng /home, /home/about, /home/services... -->
+    <script>
+        // Khi vừa vào trang (nếu URL đang ở gốc /index.html hoặc chưa có /home), tự động ép URL hiển thị thành /home
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!window.location.pathname.includes('home')) {
+                history.replaceState(null, null, '/home');
+            }
+        });
+
+        // Xử lý khi bấm vào các link menu hoặc logo
+        document.querySelectorAll('header nav a, a[href^="#"], #logo-home').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetHref = this.getAttribute('href');
+
+                // Nếu bấm vào Logo hoặc nút về trang chủ
+                if (this.id === 'logo-home' || targetHref === '#home') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '/home');
+                    return;
+                }
+
+                // Nếu bấm vào các mục menu khác (#about, #services, #contact...)
+                if (targetHref && targetHref.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetHref);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        // Cập nhật URL thành dạng /home/about, /home/services...
+                        const sectionName = targetHref.replace('#', '');
+                        history.pushState(null, null, `/home/${sectionName}`);
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
