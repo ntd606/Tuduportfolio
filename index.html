@@ -18,10 +18,12 @@
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="/home" id="logo-home" class="serif text-xl font-bold tracking-wider">TUDU STUDIO</a>
             
-            <nav class="space-x-8 text-sm font-medium uppercase tracking-widest text-stone-600 hidden md:flex items-center">
+            <nav class="space-x-6 text-sm font-medium uppercase tracking-widest text-stone-600 hidden md:flex items-center">
                 <a href="/home/about" class="nav-link hover:text-amber-600 transition" data-target="about" data-key="nav_about">Về tớ</a>
                 <a href="/home/services" class="nav-link hover:text-amber-600 transition" data-target="services" data-key="nav_services">Dịch vụ</a>
                 <a href="/home/gallery" class="nav-link hover:text-amber-600 transition" data-target="gallery" data-key="nav_gallery">Ảnh tớ chụp</a>
+                <a href="/home/policies" class="nav-link hover:text-amber-600 transition" data-target="policies" data-key="nav_policies">Chính sách</a>
+                <a href="/home/faq" class="nav-link hover:text-amber-600 transition" data-target="faq" data-key="nav_faq">FAQ</a>
                 <a href="/home/contact" class="nav-link hover:text-amber-600 transition" data-target="contact" data-key="nav_contact">Liên hệ</a>
             </nav>
 
@@ -43,6 +45,8 @@
             <a href="/home/about" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-medium text-stone-600 hover:text-amber-600 transition py-1" data-target="about" data-key="nav_about">Về tớ</a>
             <a href="/home/services" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-medium text-stone-600 hover:text-amber-600 transition py-1" data-target="services" data-key="nav_services">Dịch vụ</a>
             <a href="/home/gallery" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-medium text-stone-600 hover:text-amber-600 transition py-1" data-target="gallery" data-key="nav_gallery">Ảnh tớ chụp</a>
+            <a href="/home/policies" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-medium text-stone-600 hover:text-amber-600 transition py-1" data-target="policies" data-key="nav_policies">Chính sách</a>
+            <a href="/home/faq" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-medium text-stone-600 hover:text-amber-600 transition py-1" data-target="faq" data-key="nav_faq">FAQ</a>
             <a href="/home/contact" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-medium text-stone-600 hover:text-amber-600 transition py-1" data-target="contact" data-key="nav_contact">Liên hệ</a>
             <a href="/home/contact" class="nav-link mobile-nav-link bg-stone-900 text-white text-xs uppercase tracking-widest px-4 py-3 rounded-full text-center hover:bg-stone-800 transition inline-block" data-target="contact" data-key="btn_booking">Đặt lịch ngay</a>
         </div>
@@ -153,7 +157,72 @@
             </div>
         </section>
 
-        <section id="contact" class="bg-white py-20 border-t border-stone-100">
+        <section id="policies" class="py-20 bg-stone-100/60 border-t border-stone-200">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic" data-key="policy_tag">Quy định</span>
+                    <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="policy_main_title">Chính sách dịch vụ</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white p-6 md:p-8 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-lg mb-3 text-stone-900 serif" data-key="p1_title">Chính sách đặt cọc</h3>
+                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="p1_desc">Để giữ lịch chụp chính xác, các cậu vui lòng đặt cọc cho tớ khoản phí 200 cá để tớ giữ lịch hẹn cho buổi chụp của chúng mình nha. Lịch chụp chỉ được xác nhận khi tớ đã nhận được khoản cọc của các cậu.</p>
+                    </div>
+
+                    <div class="bg-white p-6 md:p-8 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-lg mb-3 text-stone-900 serif" data-key="p2_title">Chính sách hủy / đổi lịch</h3>
+                        <div class="text-stone-500 text-sm font-light leading-relaxed space-y-3">
+                            <p data-key="p2_item1"><strong>Từ phía Tudu:</strong> Nếu chẳng may tớ bận đột xuất phải huỷ/đổi lịch, tớ sẽ ưu tiên phương án đổi lịch hoặc tìm thợ ảnh khác hỗ trợ cho các cậu. Nếu buộc phải huỷ hoàn toàn, tớ sẽ đền bù x2 giá trị cọc ban đầu (400 cá) nha.</p>
+                            <p data-key="p2_item2"><strong>Từ phía cậu:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-20 bg-white border-t border-stone-200">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic" data-key="faq_tag">Hỗ trợ</span>
+                    <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="faq_title">Câu hỏi thường gặp (FAQ)</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q1">Studio có hỗ trợ trang điểm (makeup) và làm tóc không?</h3>
+                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a1">Tớ có hỗ trợ kết nối với các thợ makeup chuyên nghiệp, chuyên đánh theo các concept kỷ yếu/tốt nghiệp với mức giá ưu đãi dành riêng cho khách hàng của Tudu.</p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q2">Studio có những phụ kiện chụp ảnh gì vậy?</h3>
+                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a2">Về đồ nghề thì tớ sử dụng Sony A73 + 85 FE + 24-70 GM2. Ngoài ra tớ còn có đèn giả nắng công suất nhẹ, đèn tạo hiệu ứng và một vài thứ phụ kiện nho nhỏ nếu các cậu cần,... hì hì.</p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q3">Studio hỗ trợ chỉnh bao nhiêu ảnh và có nhận chỉnh thêm không?</h3>
+                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a3">Đối với mỗi khách tớ sẽ nhận làm màu 15 tấm / 1 bạn và có nhận chỉnh thêm nha.</p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q4">Bao lâu thì tụi tớ nhận được toàn bộ ảnh gốc và ảnh chỉnh sửa?</h3>
+                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a4">Ảnh gốc sẽ được gửi toàn bộ cho bạn trong vòng 2-3 ngày sau buổi chụp. Ảnh hoàn thiện chỉnh sửa sẽ được gửi trong vòng 15 ngày tiếp theo.</p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q5">Studio có nhận chụp ảnh và làm màu chính xác theo một bộ mẫu nào đấy không?</h3>
+                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a5">Không. Điều đó khá khó khăn với tớ vì điều kiện môi trường và điều kiện ánh sáng là cực kỳ quan trọng trong chụp ảnh. Để chụp và làm màu được y như một bộ mẫu nào đó thì tớ không dám nhận. Nhưng bù lại tớ hứa sẽ cố gắng hỗ trợ các cậu hết sức mình để các cậu có được sản phẩm ưng ý nhất.</p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q6">Nếu thời tiết xấu (mưa, bão) vào ngày chụp thì xử lý thế nào?</h3>
+                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a6">Tudu luôn theo sát dự báo thời tiết trước buổi chụp. Nếu thời tiết không thuận lợi, chúng mình có thể linh hoạt dời lịch sang một ngày khác hoàn toàn miễn phí để đảm bảo chất lượng bộ ảnh.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-stone-50 py-20 border-t border-stone-100">
             <div class="max-w-4xl mx-auto px-6 text-center">
                 <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic" data-key="contact_tag">Kết nối</span>
                 <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="contact_title">Trò chuyện cùng Tudu Studio</h2>
@@ -214,6 +283,8 @@
                 nav_about: "Về tớ",
                 nav_services: "Dịch vụ",
                 nav_gallery: "Ảnh tớ chụp",
+                nav_policies: "Chính sách",
+                nav_faq: "FAQ",
                 nav_contact: "Liên hệ",
                 btn_booking: "Đặt lịch ngay",
                 banner_title: "Lưu giữ thanh xuân rực rỡ",
@@ -235,6 +306,27 @@
                 srv_cta: "Nhận tư vấn báo giá →",
                 gallery_title: "Ảnh tớ chụp",
                 gallery_more: "Xem thêm",
+                policy_tag: "Quy định",
+                policy_main_title: "Chính sách dịch vụ",
+                p1_title: "Chính sách đặt cọc",
+                p1_desc: "Để giữ lịch chụp chính xác, các cậu vui lòng đặt cọc cho tớ khoản phí 200 cá để tớ giữ lịch hẹn cho buổi chụp của chúng mình nha. Lịch chụp chỉ được xác nhận khi tớ đã nhận được khoản cọc của các cậu.",
+                p2_title: "Chính sách hủy / đổi lịch",
+                p2_item1: "<strong>Từ phía Tudu:</strong> Nếu chẳng may tớ bận đột xuất phải huỷ/đổi lịch, tớ sẽ ưu tiên phương án đổi lịch hoặc tìm thợ ảnh khác hỗ trợ cho các cậu. Nếu buộc phải huỷ hoàn toàn, tớ sẽ đền bù x2 giá trị cọc ban đầu (400 cá) nha.",
+                p2_item2: "<strong>Từ phía cậu:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.",
+                faq_tag: "Hỗ trợ",
+                faq_title: "Câu hỏi thường gặp (FAQ)",
+                q1: "Studio có hỗ trợ trang điểm (makeup) và làm tóc không?",
+                a1: "Tớ có hỗ trợ kết nối với các thợ makeup chuyên nghiệp, chuyên đánh theo các concept kỷ yếu/tốt nghiệp với mức giá ưu đãi dành riêng cho khách hàng của Tudu.",
+                q2: "Studio có những phụ kiện chụp ảnh gì vậy?",
+                a2: "Về đồ nghề thì tớ sử dụng Sony A73 + 85 FE + 24-70 GM2. Ngoài ra tớ còn có đèn giả nắng công suất nhẹ, đèn tạo hiệu ứng và một vài thứ phụ kiện nho nhỏ nếu các cậu cần,... hì hì.",
+                q3: "Studio hỗ trợ chỉnh bao nhiêu ảnh và có nhận chỉnh thêm không?",
+                a3: "Đối với mỗi khách tớ sẽ nhận làm màu 15 tấm / 1 bạn và có nhận chỉnh thêm nha.",
+                q4: "Bao lâu thì tụi tớ nhận được toàn bộ ảnh gốc và ảnh chỉnh sửa?",
+                a4: "Ảnh gốc sẽ được gửi toàn bộ cho bạn trong vòng 2-3 ngày sau buổi chụp. Ảnh hoàn thiện chỉnh sửa sẽ được gửi trong vòng 15 ngày tiếp theo.",
+                q5: "Studio có nhận chụp ảnh và làm màu chính xác theo một bộ mẫu nào đấy không?",
+                a5: "Không. Điều đó khá khó khăn với tớ vì điều kiện môi trường và điều kiện ánh sáng là cực kỳ quan trọng trong chụp ảnh. Để chụp và làm màu được y như một bộ mẫu nào đó thì tớ không dám nhận. Nhưng bù lại tớ hứa sẽ cố gắng hỗ trợ các cậu hết sức mình để các cậu có được sản phẩm ưng ý nhất.",
+                q6: "Nếu thời tiết xấu (mưa, bão) vào ngày chụp thì xử lý thế nào?",
+                a6: "Tudu luôn theo sát dự báo thời tiết trước buổi chụp. Nếu thời tiết không thuận lợi, chúng mình có thể linh hoạt dời lịch sang một ngày khác hoàn toàn miễn phí để đảm bảo chất lượng bộ ảnh.",
                 contact_tag: "Kết nối",
                 contact_title: "Trò chuyện cùng Tudu Studio",
                 contact_desc: "Liên hệ cho Tudu ngay để được tư vấn và hỗ trợ. Cũng như là đặt lịch hẹn với mức giá ưu đãi nhất nhé!",
@@ -246,6 +338,8 @@
                 nav_about: "About",
                 nav_services: "Services",
                 nav_gallery: "Gallery",
+                nav_policies: "Policies",
+                nav_faq: "FAQ",
                 nav_contact: "Contact",
                 btn_booking: "Book Now",
                 banner_title: "Preserving Radiant Youth",
@@ -267,6 +361,27 @@
                 srv_cta: "Get a Quote →",
                 gallery_title: "My Portfolio",
                 gallery_more: "See More",
+                policy_tag: "Regulations",
+                policy_main_title: "Service Policies",
+                p1_title: "Deposit Policy",
+                p1_desc: "To secure your schedule, please make a deposit of 200k to hold your booking slot. The schedule is only confirmed once the deposit is received.",
+                p2_title: "Cancellation / Rescheduling Policy",
+                p2_item1: "<strong>From Tudu's side:</strong> If I unexpectedly have to cancel or reschedule, I will prioritize rescheduling or finding another photographer to support you. If cancellation is unavoidable, I will compensate 2x the initial deposit value (400k).",
+                p2_item2: "<strong>From your side:</strong> I still prioritize rescheduling. If you cancel, the deposit is non-refundable because I have turned down other bookings for that time slot.",
+                faq_tag: "Support",
+                faq_title: "Frequently Asked Questions (FAQ)",
+                q1: "Do you offer makeup and hairstyling services?",
+                a1: "I can connect you with professional makeup artists specializing in yearbook and graduation concepts at special discounted rates exclusively for Tudu's clients.",
+                q2: "What photography equipment do you use?",
+                a2: "I use a Sony A73 + 85 FE + 24-70 GM2. Additionally, I have a lightweight artificial sun light, effect lights, and a few small props if you need them!",
+                q3: "How many photos do you edit, and can I request extra?",
+                a3: "For each client, I color-grade 15 photos per person, and I do accept requests for extra edits.",
+                q4: "How long does it take to get the raw and edited photos?",
+                a4: "All raw photos will be sent to you within 2-3 days after the photoshoot. The final edited photos will be delivered within the next 15 days.",
+                q5: "Can you take and color-grade photos to match an exact sample reference?",
+                a5: "No. That's quite difficult for me because environmental and lighting conditions play a vital role in photography. Replicating a look down to the exact sample is something I cannot guarantee. However, I promise to do my absolute best to support you so you get the most satisfying results.",
+                q6: "What happens if the weather is bad (rain, storm) on the shooting day?",
+                a6: "Tudu closely monitors the weather forecast before the shoot. If conditions are unfavorable, we can flexibly reschedule to another day completely free of charge to ensure photo quality.",
                 contact_tag: "Connect",
                 contact_title: "Let's Talk with Tudu Studio",
                 contact_desc: "Contact Tudu now for consultation, support, and to schedule your session at the best promotional rates!",
@@ -309,6 +424,8 @@
             if (path.includes('/about')) targetId = 'about';
             else if (path.includes('/services')) targetId = 'services';
             else if (path.includes('/gallery')) targetId = 'gallery';
+            else if (path.includes('/policies')) targetId = 'policies';
+            else if (path.includes('/faq')) targetId = 'faq';
             else if (path.includes('/contact')) targetId = 'contact';
 
             const targetElement = document.getElementById(targetId);
@@ -331,7 +448,7 @@
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetPath = this.getAttribute('href');
-                const targetId = this.getAttribute('data-target') || (targetPath.includes('about') ? 'about' : targetPath.includes('services') ? 'services' : targetPath.includes('gallery') ? 'gallery' : targetPath.includes('contact') ? 'contact' : 'home');
+                const targetId = this.getAttribute('data-target') || (targetPath.includes('about') ? 'about' : targetPath.includes('services') ? 'services' : targetPath.includes('gallery') ? 'gallery' : targetPath.includes('policies') ? 'policies' : targetPath.includes('faq') ? 'faq' : targetPath.includes('contact') ? 'contact' : 'home');
                 
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
