@@ -10,7 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
         body { font-family: 'Montserrat', sans-serif; }
         .serif { font-family: 'Playfair Display', serif; }
- 
+
         .mobile-slide {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -77,9 +77,10 @@
     </header>
 
     <main>
-        <section id="home" class="relative w-full overflow-hidden bg-stone-950">
+        <section id="home" class="relative w-full overflow-hidden bg-stone-950 pt-16 md:pt-0">
 
-            <div class="block md:hidden relative w-full aspect-[16/9] min-h-[280px] bg-stone-950">
+            <script src="https://cdn.tailwindcss.com"></script>
+            <div class="block md:hidden relative w-full aspect-[4/3] bg-stone-950">
                 <div class="absolute inset-0 w-full h-full">
                     <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="mobile-slide active object-cover object-center w-full h-full">
                     <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="mobile-slide object-cover object-center w-full h-full">
@@ -385,7 +386,7 @@
                 p1_desc: "Để giữ lịch chụp chính xác, các cậu vui lòng đặt cọc cho tớ khoản phí 200 cá để tớ giữ lịch hẹn cho buổi chụp của chúng mình nha. Lịch chụp chỉ được xác nhận khi tớ đã nhận được khoản cọc của các cậu.",
                 p2_title: "Chính sách hủy / đổi lịch",
                 p2_item1: "<strong>Từ phía Tudu:</strong> Nếu chẳng may tớ bận đột xuất phải huỷ/đổi lịch, tớ sẽ ưu tiên phương án đổi lịch hoặc tìm thợ ảnh khác hỗ trợ cho các cậu. Nếu buộc phải huỷ hoàn toàn, tớ sẽ đền bù x2 giá trị cọc ban đầu (400 cá) nha.",
-                p2_item2: "<strong>Từ phía cậu:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.",
+                p2_item2: "<strong>From your side:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.",
                 faq_tag: "Hỗ trợ",
                 faq_title: "Câu hỏi thường gặp (FAQ)",
                 q1: "Studio có hỗ trợ trang điểm (makeup) và làm tóc không?",
