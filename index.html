@@ -65,26 +65,26 @@
     </header>
 
     <main>
-        <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden pt-24">
+        <section id="home" class="relative h-[80vh] md:h-screen flex items-center justify-center overflow-hidden pt-20">
 
             <div class="absolute inset-0 w-full h-full">
-                <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="banner-slide active w-full h-full object-cover object-top">
-                <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="banner-slide w-full h-full object-cover object-top">
-                <img src="/img/banner3.jpg" alt="Tudu Studio Banner 3" class="banner-slide w-full h-full object-cover object-top">
-                <img src="/img/banner4.jpg" alt="Tudu Studio Banner 4" class="banner-slide w-full h-full object-cover object-top">
-                <img src="/img/banner5.jpg" alt="Tudu Studio Banner 5" class="banner-slide w-full h-full object-cover object-top">
-                <img src="/img/banner6.jpg" alt="Tudu Studio Banner 6" class="banner-slide w-full h-full object-cover object-top">
+                <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="banner-slide active w-full h-full object-cover object-center md:object-top">
+                <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="banner-slide w-full h-full object-cover object-center md:object-top">
+                <img src="/img/banner3.jpg" alt="Tudu Studio Banner 3" class="banner-slide w-full h-full object-cover object-center md:object-top">
+                <img src="/img/banner4.jpg" alt="Tudu Studio Banner 4" class="banner-slide w-full h-full object-cover object-center md:object-top">
+                <img src="/img/banner5.jpg" alt="Tudu Studio Banner 5" class="banner-slide w-full h-full object-cover object-center md:object-top">
+                <img src="/img/banner6.jpg" alt="Tudu Studio Banner 6" class="banner-slide w-full h-full object-cover object-center md:object-top">
             </div>
 
-            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute inset-0 bg-black/45 md:bg-black/40"></div>
             
-            <div class="relative text-center text-white px-4 max-w-3xl mx-auto z-10">
-                <h1 class="text-4xl md:text-6xl mb-4 italic serif" data-key="banner_title">Lưu giữ thanh xuân rực rỡ</h1>
-                <p class="text-sm md:text-base font-light tracking-[0.2em] uppercase mb-8" data-key="banner_sub">Ghi lại kỉ niệm của bạn theo cách trọn vẹn nhất</p>
-                <a href="/home/gallery" class="nav-link bg-white text-stone-900 px-8 py-3.5 rounded-full font-medium hover:bg-amber-50 transition tracking-wider text-xs uppercase inline-block" data-target="gallery" data-key="btn_gallery">Xem ảnh mẫu</a>
+            <div class="relative text-center text-white px-4 max-w-3xl mx-auto z-10 mt-6">
+                <h1 class="text-3xl sm:text-4xl md:text-6xl mb-3 italic serif leading-tight" data-key="banner_title">Lưu giữ thanh xuân rực rỡ</h1>
+                <p class="text-xs sm:text-sm md:text-base font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-6" data-key="banner_sub">Ghi lại kỉ niệm của bạn theo cách trọn vẹn nhất</p>
+                <a href="/home/gallery" class="nav-link bg-white text-stone-900 px-7 py-3 rounded-full font-medium hover:bg-amber-50 transition tracking-wider text-xs uppercase inline-block shadow-md" data-target="gallery" data-key="btn_gallery">Xem ảnh mẫu</a>
             </div>
 
-            <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2 z-20 cursor-pointer">
+            <div class="absolute bottom-5 left-0 right-0 flex justify-center space-x-2 z-20 cursor-pointer">
                 <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(0)"></button>
                 <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(1)"></button>
                 <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(2)"></button>
@@ -319,7 +319,7 @@
             });
             slides[index].classList.add('active');
             dots[index].classList.remove('bg-white/50', 'w-3');
-            dots[index].classList.add('bg-white', 'w-8'); // Gạt dài thành hình pill khi active
+            dots[index].classList.add('bg-white', 'w-8');
         }
 
         function nextSlide() {
@@ -330,7 +330,7 @@
         function currentSlide(index) {
             slideIndex = index;
             showSlide(slideIndex);
-            resetTimer(); // Reset lại bộ đếm thời gian khi người dùng tự click chuyển
+            resetTimer();
         }
 
         let slideTimer = setInterval(nextSlide, 3000);
