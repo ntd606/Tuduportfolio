@@ -10,15 +10,29 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
         body { font-family: 'Montserrat', sans-serif; }
         .serif { font-family: 'Playfair Display', serif; }
-        .banner-slide {
+        
+        /* Slide riêng cho Mobile */
+        .mobile-slide {
             opacity: 0;
             transition: opacity 1s ease-in-out;
             position: absolute;
             inset: 0;
+            width: 100%;
+            height: 100%;
         }
-        .banner-slide.active {
-            opacity: 1;
+        .mobile-slide.active { opacity: 1; }
+
+        /* Slide riêng cho PC - Giữ nguyên gốc */
+        .pc-slide {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
         }
+        .pc-slide.active { opacity: 1; }
+
         .slider-dot {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -65,23 +79,38 @@
     </header>
 
     <main>
-        <section id="home" class="relative min-h-[75vh] md:h-screen flex items-center justify-center overflow-hidden pt-20">
+        <section id="home" class="relative w-full overflow-hidden bg-stone-950">
 
-            <div class="absolute inset-0 w-full h-full">
-                <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="banner-slide active w-full h-full object-cover object-top md:object-top">
-                <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="banner-slide w-full h-full object-cover object-top md:object-top">
-                <img src="/img/banner3.jpg" alt="Tudu Studio Banner 3" class="banner-slide w-full h-full object-cover object-top md:object-top">
-                <img src="/img/banner4.jpg" alt="Tudu Studio Banner 4" class="banner-slide w-full h-full object-cover object-top md:object-top">
-                <img src="/img/banner5.jpg" alt="Tudu Studio Banner 5" class="banner-slide w-full h-full object-cover object-top md:object-top">
-                <img src="/img/banner6.jpg" alt="Tudu Studio Banner 6" class="banner-slide w-full h-full object-cover object-top md:object-top">
+            <div class="block md:hidden relative w-full aspect-[16/9] bg-stone-950">
+                <div class="absolute inset-0 w-full h-full">
+                    <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="mobile-slide active object-contain">
+                    <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="mobile-slide object-contain">
+                    <img src="/img/banner3.jpg" alt="Tudu Studio Banner 3" class="mobile-slide object-contain">
+                    <img src="/img/banner4.jpg" alt="Tudu Studio Banner 4" class="mobile-slide object-contain">
+                    <img src="/img/banner5.jpg" alt="Tudu Studio Banner 5" class="mobile-slide object-contain">
+                    <img src="/img/banner6.jpg" alt="Tudu Studio Banner 6" class="mobile-slide object-contain">
+                </div>
+                <div class="absolute inset-0 bg-black/20"></div>
             </div>
 
-            <div class="absolute inset-0 bg-black/40"></div>
-            
-            <div class="relative text-center text-white px-4 max-w-3xl mx-auto z-10 py-16 md:py-0">
-                <h1 class="text-3xl sm:text-4xl md:text-6xl mb-3 italic serif leading-tight" data-key="banner_title">Lưu giữ thanh xuân rực rỡ</h1>
-                <p class="text-xs sm:text-sm md:text-base font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-6" data-key="banner_sub">Ghi lại kỉ niệm của bạn theo cách trọn vẹn nhất</p>
-                <a href="/home/gallery" class="nav-link bg-white text-stone-900 px-7 py-3 rounded-full font-medium hover:bg-amber-50 transition tracking-wider text-xs uppercase inline-block shadow-md" data-target="gallery" data-key="btn_gallery">Xem ảnh mẫu</a>
+            <div class="hidden md:block relative w-full h-screen bg-stone-950">
+                <div class="absolute inset-0 w-full h-full">
+                    <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="pc-slide active object-cover object-top">
+                    <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="pc-slide object-cover object-top">
+                    <img src="/img/banner3.jpg" alt="Tudu Studio Banner 3" class="pc-slide object-cover object-top">
+                    <img src="/img/banner4.jpg" alt="Tudu Studio Banner 4" class="pc-slide object-cover object-top">
+                    <img src="/img/banner5.jpg" alt="Tudu Studio Banner 5" class="pc-slide object-cover object-top">
+                    <img src="/img/banner6.jpg" alt="Tudu Studio Banner 6" class="pc-slide object-cover object-top">
+                </div>
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-10 pointer-events-none">
+                <div class="pointer-events-auto max-w-3xl mx-auto">
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl mb-3 italic serif leading-tight" data-key="banner_title">Lưu giữ thanh xuân rực rỡ</h1>
+                    <p class="text-xs sm:text-sm md:text-base font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-6" data-key="banner_sub">Ghi lại kỉ niệm của bạn theo cách trọn vẹn nhất</p>
+                    <a href="/home/gallery" class="nav-link bg-white text-stone-900 px-7 py-3 rounded-full font-medium hover:bg-amber-50 transition tracking-wider text-xs uppercase inline-block shadow-md" data-target="gallery" data-key="btn_gallery">Xem ảnh mẫu</a>
+                </div>
             </div>
 
             <div class="absolute bottom-5 left-0 right-0 flex justify-center space-x-2 z-20 cursor-pointer">
@@ -96,11 +125,9 @@
 
         <section id="about" class="max-w-5xl mx-auto py-20 px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
                 <div class="w-full aspect-[4/5] bg-stone-200 overflow-hidden shadow-sm">
                     <img src="/img/me.jpg" alt="Chân dung Tudu Studio" class="w-full h-full object-cover">
                 </div>
-
                 <div>
                     <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic" data-key="about_tag">Về tớ</span>
                     <h2 class="text-3xl md:text-4xl mt-3 mb-6 leading-tight serif" data-key="about_title">Mỗi khung hình là một câu chuyện.</h2>
@@ -119,7 +146,6 @@
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="services_main_title">Dịch vụ</h2>
                 </div>
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
                     <div class="bg-stone-50 p-8 border border-stone-200 flex flex-col justify-between">
                         <div>
@@ -138,7 +164,6 @@
                         <a href="/home/contact" class="nav-link text-xs uppercase tracking-widest font-bold text-amber-600 hover:underline" data-target="contact" data-key="srv_cta">Nhận tư vấn báo giá →</a>
                     </div>
                 </div>
-
                 <div class="max-w-xl mx-auto">
                     <div class="bg-stone-50 p-8 border border-stone-200 flex flex-col justify-between">
                         <div>
@@ -155,28 +180,14 @@
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="gallery_title">Ảnh tớ chụp</h2>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]">
-                    <img src="/img/mau1.jpg" alt="Ảnh kỷ yếu Tudu Studio 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]">
-                    <img src="/img/mau2.jpg" alt="Ảnh tốt nghiệp Tudu Studio 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]">
-                    <img src="/img/mau3.jpg" alt="Ảnh kỷ yếu Tudu Studio 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]">
-                    <img src="/img/mau4.jpg" alt="Ảnh kỷ yếu Tudu Studio 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]">
-                    <img src="/img/mau5.jpg" alt="Ảnh tốt nghiệp Tudu Studio 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]">
-                    <img src="/img/mau6.jpg" alt="Ảnh tốt nghiệp Tudu Studio 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
+                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]"><img src="/img/mau1.jpg" alt="Ảnh 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]"><img src="/img/mau2.jpg" alt="Ảnh 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]"><img src="/img/mau3.jpg" alt="Ảnh 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]"><img src="/img/mau4.jpg" alt="Ảnh 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]"><img src="/img/mau5.jpg" alt="Ảnh 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+                <div class="overflow-hidden group cursor-pointer shadow-sm bg-stone-100 aspect-[3/4]"><img src="/img/mau6.jpg" alt="Ảnh 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
             </div>
-
             <div class="text-center">
                 <a href="https://drive.google.com/drive/folders/1MbgU5eV8XrU6sJTZesMKupSwwnQW9M_e?usp=drive_link" target="_blank" 
                    class="inline-flex items-center space-x-2 border-b-2 border-stone-900 pb-1 text-xs uppercase tracking-[0.2em] font-bold text-stone-900 hover:text-amber-600 hover:border-amber-600 transition duration-300">
@@ -192,13 +203,11 @@
                     <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic" data-key="policy_tag">Quy định</span>
                     <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="policy_main_title">Chính sách dịch vụ</h2>
                 </div>
-
                 <div class="space-y-6">
                     <div class="bg-white p-6 md:p-8 border border-stone-200 shadow-sm">
                         <h3 class="font-semibold text-lg mb-3 text-stone-900 serif" data-key="p1_title">Chính sách đặt cọc</h3>
                         <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="p1_desc">Để giữ lịch chụp chính xác, các cậu vui lòng đặt cọc cho tớ khoản phí 200 cá để tớ giữ lịch hẹn cho buổi chụp của chúng mình nha. Lịch chụp chỉ được xác nhận khi tớ đã nhận được khoản cọc của các cậu.</p>
                     </div>
-
                     <div class="bg-white p-6 md:p-8 border border-stone-200 shadow-sm">
                         <h3 class="font-semibold text-lg mb-3 text-stone-900 serif" data-key="p2_title">Chính sách hủy / đổi lịch</h3>
                         <div class="text-stone-500 text-sm font-light leading-relaxed space-y-3">
@@ -216,37 +225,13 @@
                     <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic" data-key="faq_tag">Hỗ trợ</span>
                     <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="faq_title">Câu hỏi thường gặp (FAQ)</h2>
                 </div>
-
                 <div class="space-y-6">
-                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
-                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q1">Studio có hỗ trợ trang điểm (makeup) và làm tóc không?</h3>
-                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a1">Tớ có hỗ trợ kết nối với các thợ makeup chuyên nghiệp, chuyên đánh theo các concept kỷ yếu/tốt nghiệp với mức giá ưu đãi dành riêng cho khách hàng của Tudu.</p>
-                    </div>
-
-                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
-                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q2">Studio có những phụ kiện chụp ảnh gì vậy?</h3>
-                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a2">Về đồ nghề thì tớ sử dụng Sony A73 + 85 FE + 24-70 GM2. Ngoài ra tớ còn có đèn giả nắng công suất nhẹ, đèn tạo hiệu ứng và một vài thứ phụ kiện nho nhỏ nếu các cậu cần,... hì hì.</p>
-                    </div>
-
-                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
-                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q3">Studio hỗ trợ chỉnh bao nhiêu ảnh và có nhận chỉnh thêm không?</h3>
-                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a3">Đối với mỗi khách tớ sẽ nhận làm màu 15 tấm / 1 bạn và có nhận chỉnh thêm nha.</p>
-                    </div>
-
-                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
-                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q4">Bao lâu thì tụi tớ nhận được toàn bộ ảnh gốc và ảnh chỉnh sửa?</h3>
-                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a4">Ảnh gốc sẽ được gửi toàn bộ cho bạn trong vòng 2-3 ngày sau buổi chụp. Ảnh hoàn thiện chỉnh sửa sẽ được gửi trong vòng 15 ngày tiếp theo.</p>
-                    </div>
-
-                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
-                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q5">Studio có nhận chụp ảnh và làm màu chính xác theo một bộ mẫu nào đấy không?</h3>
-                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a5">Không. Điều đó khá khó khăn với tớ vì điều kiện môi trường và điều kiện ánh sáng là cực kỳ quan trọng trong chụp ảnh. Để chụp và làm màu được y như một bộ mẫu nào đó thì tớ không dám nhận. Nhưng bù lại tớ hứa sẽ cố gắng hỗ trợ các cậu hết sức mình để các cậu có được sản phẩm ưng ý nhất.</p>
-                    </div>
-
-                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm">
-                        <h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q6">Nếu thời tiết xấu (mưa, bão) vào ngày chụp thì xử lý thế nào?</h3>
-                        <p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a6">Tudu luôn theo sát dự báo thời tiết trước buổi chụp. Nếu thời tiết không thuận lợi, chúng mình có thể linh hoạt dời lịch sang một ngày khác hoàn toàn miễn phí để đảm bảo chất lượng bộ ảnh.</p>
-                    </div>
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm"><h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q1">Studio có hỗ trợ trang điểm (makeup) và làm tóc không?</h3><p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a1">Tớ có hỗ trợ kết nối với các thợ makeup chuyên nghiệp, chuyên đánh theo các concept kỷ yếu/tốt nghiệp với mức giá ưu đãi dành riêng cho khách hàng của Tudu.</p></div>
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm"><h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q2">Studio có những phụ kiện chụp ảnh gì vậy?</h3><p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a2">Về đồ nghề thì tớ sử dụng Sony A73 + 85 FE + 24-70 GM2. Ngoài ra tớ còn có đèn giả nắng công suất nhẹ, đèn tạo hiệu ứng và một vài thứ phụ kiện nho nhỏ nếu các cậu cần,... hì hì.</p></div>
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm"><h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q3">Studio hỗ trợ chỉnh bao nhiêu ảnh và có nhận chỉnh thêm không?</h3><p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a3">Đối với mỗi khách tớ sẽ nhận làm màu 15 tấm / 1 bạn và có nhận chỉnh thêm nha.</p></div>
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm"><h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q4">Bao lâu thì tụi tớ nhận được toàn bộ ảnh gốc và ảnh chỉnh sửa?</h3><p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a4">Ảnh gốc sẽ được gửi toàn bộ cho bạn trong vòng 2-3 ngày sau buổi chụp. Ảnh hoàn thiện chỉnh sửa sẽ được gửi trong vòng 15 ngày tiếp theo.</p></div>
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm"><h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q5">Studio có nhận chụp ảnh và làm màu chính xác theo một bộ mẫu nào đấy không?</h3><p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a5">Không. Điều đó khá khó khăn với tớ vì điều kiện môi trường và điều kiện ánh sáng là cực kỳ quan trọng trong chụp ảnh. Để chụp và làm màu được y như một bộ mẫu nào đó thì tớ không dám nhận. Nhưng bù lại tớ hứa sẽ cố gắng hỗ trợ các cậu hết sức mình để các cậu có được sản phẩm ưng ý nhất.</p></div>
+                    <div class="bg-stone-50 p-6 border border-stone-200 shadow-sm"><h3 class="font-semibold text-base mb-2 text-stone-900" data-key="q6">Nếu thời tiết xấu (mưa, bão) vào ngày chụp thì xử lý thế nào?</h3><p class="text-stone-500 text-sm font-light leading-relaxed" data-key="a6">Tudu luôn theo sát dự báo thời tiết trước buổi chụp. Nếu thời tiết không thuận lợi, chúng mình có thể linh hoạt dời lịch sang một ngày khác hoàn toàn miễn phí để đảm bảo chất lượng bộ ảnh.</p></div>
                 </div>
             </div>
         </section>
@@ -256,42 +241,31 @@
                 <span class="text-amber-600 uppercase tracking-[0.3em] text-xs font-bold italic" data-key="contact_tag">Kết nối</span>
                 <h2 class="text-3xl md:text-4xl mt-3 serif" data-key="contact_title">Trò chuyện cùng Tudu Studio</h2>
                 <p class="text-stone-500 text-sm font-light mt-3 max-w-lg mx-auto mb-10" data-key="contact_desc">Liên hệ cho Tudu ngay để được tư vấn và hỗ trợ. Cũng như là đặt lịch hẹn với mức giá ưu đãi nhất nhé!</p>
-
                 <div class="flex justify-center items-center gap-12 md:gap-16">
-                    
                     <a href="https://www.facebook.com/ntd.606/" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" class="w-full h-full drop-shadow-sm rounded-2xl object-contain">
                         </div>
                         <span class="mt-2 text-[10px] md:text-xs uppercase tracking-widest font-medium text-stone-500 group-hover:text-stone-900 transition">Facebook</span>
                     </a>
-
                     <a href="https://zalo.me/0979807919" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="w-full h-full drop-shadow-sm rounded-2xl object-contain">
                         </div>
                         <span class="mt-2 text-[10px] md:text-xs uppercase tracking-widest font-medium text-stone-500 group-hover:text-stone-900 transition">Zalo</span>
                     </a>
-
                     <a href="https://www.tiktok.com/@ntd606_" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
-                            <svg class="w-full h-full drop-shadow-sm rounded-2xl" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="512" height="512" rx="112" fill="black"/>
-                                <path d="M351.53 148.29C327.91 148.29 306.01 138.83 290.35 123.18C274.7 107.53 265.23 85.63 265.23 62.01V48H206.26V327.53C206.26 357.65 181.8 382.11 151.68 382.11C121.56 382.11 97.1 357.65 97.1 327.53C97.1 297.41 121.56 272.95 151.68 272.95C158.4 272.95 164.84 274.24 170.83 276.59V215.93C164.55 214.64 158.19 213.98 151.68 213.98C89.02 213.98 38.13 264.87 38.13 327.53C38.13 390.19 89.02 441.08 151.68 441.08C214.34 441.08 265.23 390.19 265.23 327.53V187.67C295.69 209.11 333.37 221.46 374.39 221.46V162.49C366.86 162.49 359.33 160.7 351.53 148.29Z" fill="#25F4EE"/>
-                                <path d="M374.39 104.99C350.77 104.99 328.87 95.53 313.21 79.88C297.56 64.23 288.09 42.33 288.09 18.71V4.72H229.12V284.24C229.12 314.36 204.66 338.82 174.54 338.82C144.42 338.82 119.96 314.36 119.96 284.24C119.96 254.12 144.42 229.66 174.54 229.66C181.26 229.66 187.7 230.95 193.69 233.3V172.64C187.41 171.35 181.05 170.69 174.54 170.69C111.88 170.69 60.99 221.58 60.99 284.24C60.99 346.9 111.88 397.79 174.54 397.79C237.2 397.79 288.09 346.9 288.09 284.24V144.38C318.55 165.82 356.23 178.17 397.25 178.17V119.2C389.72 119.2 382.19 117.41 374.39 104.99Z" fill="#FE2C55"/>
-                                <path d="M374.39 133.58C341.25 133.58 314.47 160.36 314.47 193.5C314.47 226.64 341.25 253.42 374.39 253.42C407.53 253.42 434.31 226.64 434.31 193.5C434.31 160.36 407.53 133.58 374.39 133.58Z" fill="white"/>
-                            </svg>
+                            <svg class="w-full h-full drop-shadow-sm rounded-2xl" viewBox="0 0 512 512" fill="none"><rect width="512" height="512" rx="112" fill="black"/><path d="M351.53 148.29C327.91 148.29 306.01 138.83 290.35 123.18C274.7 107.53 265.23 85.63 265.23 62.01V48H206.26V327.53C206.26 357.65 181.8 382.11 151.68 382.11C121.56 382.11 97.1 357.65 97.1 327.53C97.1 297.41 121.56 272.95 151.68 272.95C158.4 272.95 164.84 274.24 170.83 276.59V215.93C164.55 214.64 158.19 213.98 151.68 213.98C89.02 213.98 38.13 264.87 38.13 327.53C38.13 390.19 89.02 441.08 151.68 441.08C214.34 441.08 265.23 390.19 265.23 327.53V187.67C295.69 209.11 333.37 221.46 374.39 221.46V162.49C366.86 162.49 359.33 160.7 351.53 148.29Z" fill="#25F4EE"/><path d="M374.39 104.99C350.77 104.99 328.87 95.53 313.21 79.88C297.56 64.23 288.09 42.33 288.09 18.71V4.72H229.12V284.24C229.12 314.36 204.66 338.82 174.54 338.82C144.42 338.82 119.96 314.36 119.96 284.24C119.96 254.12 144.42 229.66 174.54 229.66C181.26 229.66 187.7 230.95 193.69 233.3V172.64C187.41 171.35 181.05 170.69 174.54 170.69C111.88 170.69 60.99 221.58 60.99 284.24C60.99 346.9 111.88 397.79 174.54 397.79C237.2 397.79 288.09 346.9 288.09 284.24V144.38C318.55 165.82 356.23 178.17 397.25 178.17V119.2C389.72 119.2 382.19 117.41 374.39 104.99Z" fill="#FE2C55"/><path d="M374.39 133.58C341.25 133.58 314.47 160.36 314.47 193.5C314.47 226.64 341.25 253.42 374.39 253.42C407.53 253.42 434.31 226.64 434.31 193.5C434.31 160.36 407.53 133.58 374.39 133.58Z" fill="white"/></svg>
                         </div>
                         <span class="mt-2 text-[10px] md:text-xs uppercase tracking-widest font-medium text-stone-500 group-hover:text-stone-900 transition">TikTok</span>
                     </a>
-
                     <a href="https://www.instagram.com/ntd_606/" target="_blank" class="group flex flex-col items-center">
                         <div class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group-hover:-translate-y-1.5 transition duration-300">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="w-full h-full drop-shadow-sm rounded-2xl object-contain">
                         </div>
                         <span class="mt-2 text-[10px] md:text-xs uppercase tracking-widest font-medium text-stone-500 group-hover:text-stone-900 transition">Instagram</span>
                     </a>
-
                 </div>
             </div>
         </section>
@@ -308,22 +282,38 @@
 
     <script>
         let slideIndex = 0;
-        const slides = document.querySelectorAll('.banner-slide');
+        const mobileSlides = document.querySelectorAll('.mobile-slide');
+        const pcSlides = document.querySelectorAll('.pc-slide');
         const dots = document.querySelectorAll('.slider-dot');
 
         function showSlide(index) {
-            slides.forEach((slide, i) => {
+            // Mobile slides
+            mobileSlides.forEach((slide, i) => {
                 slide.classList.remove('active');
-                dots[i].classList.remove('bg-white', 'w-8');
-                dots[i].classList.add('bg-white/50', 'w-3');
             });
-            slides[index].classList.add('active');
-            dots[index].classList.remove('bg-white/50', 'w-3');
-            dots[index].classList.add('bg-white', 'w-8');
+            if(mobileSlides[index]) mobileSlides[index].classList.add('active');
+
+            // PC slides
+            pcSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+            });
+            if(pcSlides[index]) pcSlides[index].classList.add('active');
+
+            // Dots
+            dots.forEach((dot, i) => {
+                dot.classList.remove('bg-white', 'w-8');
+                dot.classList.add('bg-white/50', 'w-3');
+            });
+            if(dots[index]) {
+                dots[index].classList.remove('bg-white/50', 'w-3');
+                dots[index].classList.add('bg-white', 'w-8');
+            }
         }
 
         function nextSlide() {
-            slideIndex = (slideIndex + 1) % slides.length;
+            slideIndex = (slideIndex + 1) * 1;
+            const total = Math.max(mobileSlides.length, pcSlides.length);
+            slideIndex = slideIndex % total;
             showSlide(slideIndex);
         }
 
@@ -462,9 +452,7 @@
 
         document.getElementById('lang-toggle').addEventListener('click', () => {
             currentLang = currentLang === 'vi' ? 'en' : 'vi';
-            
             document.getElementById('lang-toggle').innerText = currentLang === 'vi' ? 'EN / VI' : 'VI / EN';
-
             document.querySelectorAll('[data-key]').forEach(el => {
                 const key = el.getAttribute('data-key');
                 if (translations[currentLang][key]) {
@@ -529,6 +517,5 @@
             navigateTo(window.location.pathname, false);
         });
     </script>
-
 </body>
 </html>
