@@ -99,13 +99,13 @@
                     </div>
                 </div>
 
-                <div class="absolute bottom-3 left-0 right-0 flex justify-center space-x-1.5 z-20 cursor-pointer pointer-events-auto">
-                    <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(0)"></button>
-                    <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(1)"></button>
-                    <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(2)"></button>
-                    <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(3)"></button>
-                    <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(4)"></button>
-                    <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition" onclick="currentSlide(5)"></button>
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+                    <button onclick="currentSlide(0)" class="slider-dot transition-all duration-300 bg-white w-8 h-2 rounded-full"></button>
+                    <button onclick="currentSlide(1)" class="slider-dot transition-all duration-300 bg-white/50 w-2 h-2 rounded-full"></button>
+                    <button onclick="currentSlide(2)" class="slider-dot transition-all duration-300 bg-white/50 w-2 h-2 rounded-full"></button>
+                    <button onclick="currentSlide(3)" class="slider-dot transition-all duration-300 bg-white/50 w-2 h-2 rounded-full"></button>
+                    <button onclick="currentSlide(4)" class="slider-dot transition-all duration-300 bg-white/50 w-2 h-2 rounded-full"></button>
+                    <button onclick="currentSlide(5)" class="slider-dot transition-all duration-300 bg-white/50 w-2 h-2 rounded-full"></button>
                 </div>
             </div>
 
@@ -301,30 +301,47 @@
         let slideIndex = 0;
         const mobileSlides = document.querySelectorAll('.mobile-slide');
         const pcSlides = document.querySelectorAll('.pc-slide');
-        const dots = document.querySelectorAll('.slider-dot');
+        
+        // Tách biệt rõ ràng mảng dot của Mobile và PC cho chính xác
+        const mobileDots = document.querySelectorAll('.block.md\\:hidden .slider-dot');
+        const pcDots = document.querySelectorAll('.hidden.md\\:block .slider-dot');
 
         function showSlide(index) {
-            // Mobile slides
             mobileSlides.forEach((slide) => {
                 slide.classList.remove('active');
             });
             if(mobileSlides[index]) mobileSlides[index].classList.add('active');
 
-            // PC slides
             pcSlides.forEach((slide) => {
                 slide.classList.remove('active');
             });
             if(pcSlides[index]) pcSlides[index].classList.add('active');
 
-            // Dots
-            dots.forEach((dot) => {
-                dot.classList.remove('bg-white', 'w-8');
-                dot.classList.add('bg-white/50', 'w-3');
+            mobileDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.style.width = '32px';
+                    dot.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+                } else {
+                    dot.style.width = '8px';
+                    dot.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                }
+                dot.style.height = '8px';
+                dot.style.borderRadius = '9999px';
+                dot.style.transition = 'all 0.3s ease';
             });
-            if(dots[index]) {
-                dots[index].classList.remove('bg-white/50', 'w-3');
-                dots[index].classList.add('bg-white', 'w-8');
-            }
+
+            pcDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.style.width = '32px';
+                    dot.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+                } else {
+                    dot.style.width = '8px';
+                    dot.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                }
+                dot.style.height = '8px';
+                dot.style.borderRadius = '9999px';
+                dot.style.transition = 'all 0.3s ease';
+            });
         }
 
         function nextSlide() {
@@ -347,10 +364,7 @@
             slideTimer = setInterval(nextSlide, 3000);
         }
 
-        if(dots.length > 0) {
-            dots[0].classList.remove('bg-white/50', 'w-3');
-            dots[0].classList.add('bg-white', 'w-8');
-        }
+        showSlide(0);
 
         const translations = {
             vi: {
@@ -386,7 +400,7 @@
                 p1_desc: "Để giữ lịch chụp chính xác, các cậu vui lòng đặt cọc cho tớ khoản phí 200 cá để tớ giữ lịch hẹn cho buổi chụp của chúng mình nha. Lịch chụp chỉ được xác nhận khi tớ đã nhận được khoản cọc của các cậu.",
                 p2_title: "Chính sách hủy / đổi lịch",
                 p2_item1: "<strong>Từ phía Tudu:</strong> Nếu chẳng may tớ bận đột xuất phải huỷ/đổi lịch, tớ sẽ ưu tiên phương án đổi lịch hoặc tìm thợ ảnh khác hỗ trợ cho các cậu. Nếu buộc phải huỷ hoàn toàn, tớ sẽ đền bù x2 giá trị cọc ban đầu (400 cá) nha.",
-                p2_item2: "<strong>From your side:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.",
+                p2_item2: "<strong>Từ phía cậu:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.",
                 faq_tag: "Hỗ trợ",
                 faq_title: "Câu hỏi thường gặp (FAQ)",
                 q1: "Studio có hỗ trợ trang điểm (makeup) và làm tóc không?",
