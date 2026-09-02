@@ -22,7 +22,6 @@
         }
         .mobile-slide.active { opacity: 1; }
 
-        /* Slide riêng cho PC - Giữ nguyên gốc */
         .pc-slide {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -81,16 +80,16 @@
     <main>
         <section id="home" class="relative w-full overflow-hidden bg-stone-950">
 
-            <div class="block md:hidden relative w-full aspect-[16/9] bg-stone-950">
+            <div class="block md:hidden relative w-full h-[85vh] min-h-[500px] bg-stone-950">
                 <div class="absolute inset-0 w-full h-full">
-                    <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="mobile-slide active object-contain">
-                    <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="mobile-slide object-contain">
-                    <img src="/img/banner3.jpg" alt="Tudu Studio Banner 3" class="mobile-slide object-contain">
-                    <img src="/img/banner4.jpg" alt="Tudu Studio Banner 4" class="mobile-slide object-contain">
-                    <img src="/img/banner5.jpg" alt="Tudu Studio Banner 5" class="mobile-slide object-contain">
-                    <img src="/img/banner6.jpg" alt="Tudu Studio Banner 6" class="mobile-slide object-contain">
+                    <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="mobile-slide active object-cover object-center">
+                    <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="mobile-slide object-cover object-center">
+                    <img src="/img/banner3.jpg" alt="Tudu Studio Banner 3" class="mobile-slide object-cover object-center">
+                    <img src="/img/banner4.jpg" alt="Tudu Studio Banner 4" class="mobile-slide object-cover object-center">
+                    <img src="/img/banner5.jpg" alt="Tudu Studio Banner 5" class="mobile-slide object-cover object-center">
+                    <img src="/img/banner6.jpg" alt="Tudu Studio Banner 6" class="mobile-slide object-cover object-center">
                 </div>
-                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="absolute inset-0 bg-black/30"></div>
             </div>
 
             <div class="hidden md:block relative w-full h-screen bg-stone-950">
@@ -288,19 +287,19 @@
 
         function showSlide(index) {
             // Mobile slides
-            mobileSlides.forEach((slide, i) => {
+            mobileSlides.forEach((slide) => {
                 slide.classList.remove('active');
             });
             if(mobileSlides[index]) mobileSlides[index].classList.add('active');
 
             // PC slides
-            pcSlides.forEach((slide, i) => {
+            pcSlides.forEach((slide) => {
                 slide.classList.remove('active');
             });
             if(pcSlides[index]) pcSlides[index].classList.add('active');
 
             // Dots
-            dots.forEach((dot, i) => {
+            dots.forEach((dot) => {
                 dot.classList.remove('bg-white', 'w-8');
                 dot.classList.add('bg-white/50', 'w-3');
             });
@@ -311,7 +310,7 @@
         }
 
         function nextSlide() {
-            slideIndex = (slideIndex + 1) * 1;
+            slideIndex = (slideIndex + 1);
             const total = Math.max(mobileSlides.length, pcSlides.length);
             slideIndex = slideIndex % total;
             showSlide(slideIndex);
