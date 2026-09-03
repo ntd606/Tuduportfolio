@@ -36,11 +36,11 @@
         }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-900 overflow-x-hidden">
+<body class="bg-stone-50 text-stone-900 overflow-x-hidden w-full m-0 p-0">
 
-    <header class="bg-white/90 backdrop-blur-md border-b border-stone-200 py-4 px-6 fixed top-0 left-0 right-0 z-50">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="/home" id="logo-home" class="serif text-xl font-bold tracking-wider text-stone-900">TUDU STUDIO</a>
+    <header class="bg-white/90 backdrop-blur-md border-b border-stone-200 py-4 px-4 sm:px-6 fixed top-0 left-0 right-0 z-50 w-full box-border">
+        <div class="max-w-6xl mx-auto flex justify-between items-center w-full">
+            <a href="/home" id="logo-home" class="serif text-lg sm:text-xl font-bold tracking-wider text-stone-900">TUDU STUDIO</a>
             
             <nav class="space-x-6 text-sm font-semibold uppercase tracking-widest text-stone-800 hidden md:flex items-center">
                 <a href="/home/about" class="nav-link hover:text-amber-600 transition" data-target="about" data-key="nav_about">Về tớ</a>
@@ -51,8 +51,8 @@
                 <a href="/home/contact" class="nav-link hover:text-amber-600 transition" data-target="contact" data-key="nav_contact">Liên hệ</a>
             </nav>
 
-            <div class="flex items-center space-x-3">
-                <button id="lang-toggle" class="text-xs uppercase font-bold tracking-widest px-3 py-2 border border-stone-300 rounded-full hover:border-amber-600 hover:text-amber-600 transition text-stone-800">
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <button id="lang-toggle" class="text-[10px] sm:text-xs uppercase font-bold tracking-widest px-2.5 py-1.5 sm:px-3 sm:py-2 border border-stone-300 rounded-full hover:border-amber-600 hover:text-amber-600 transition text-stone-800">
                     EN / VI
                 </button>
                 <a href="/home/contact" class="nav-link bg-stone-900 text-white text-xs uppercase tracking-widest px-4 py-2.5 rounded-full hover:bg-stone-800 transition hidden sm:inline-block font-semibold" data-target="contact" data-key="btn_booking">Đặt lịch ngay</a>
@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-stone-200 shadow-lg px-6 py-4 flex flex-col space-y-4">
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-stone-200 shadow-lg px-6 py-4 flex flex-col space-y-4 w-full">
             <a href="/home/about" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-semibold text-stone-800 hover:text-amber-600 transition py-1" data-target="about" data-key="nav_about">Về tớ</a>
             <a href="/home/services" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-semibold text-stone-800 hover:text-amber-600 transition py-1" data-target="services" data-key="nav_services">Dịch vụ</a>
             <a href="/home/gallery" class="nav-link mobile-nav-link text-sm uppercase tracking-widest font-semibold text-stone-800 hover:text-amber-600 transition py-1" data-target="gallery" data-key="nav_gallery">Ảnh tớ chụp</a>
@@ -76,10 +76,10 @@
         </div>
     </header>
 
-    <main>
+    <main class="w-full overflow-hidden">
         <section id="home" class="relative w-full overflow-hidden bg-stone-950 pt-16 md:pt-0">
 
-            <div class="block md:hidden relative w-full aspect-[4/3] bg-stone-950">
+            <div class="block md:hidden relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
                 <div class="absolute inset-0 w-full h-full">
                     <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="mobile-slide active object-cover object-center w-full h-full">
                     <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="mobile-slide object-cover object-center w-full h-full">
@@ -91,7 +91,7 @@
                 <div class="absolute inset-0 bg-black/30"></div>
 
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-10 pointer-events-none">
-                    <div class="pointer-events-auto max-w-xs sm:max-w-3xl mx-auto">
+                    <div class="pointer-events-auto max-w-xs sm:max-w-3xl mx-auto w-full">
                         <h1 class="text-xl sm:text-3xl mb-2 italic serif leading-tight" data-key="banner_title">Lưu giữ thanh xuân rực rỡ</h1>
                         <p class="text-[10px] sm:text-xs font-light tracking-[0.15em] uppercase mb-4" data-key="banner_sub">Ghi lại kỉ niệm của bạn theo cách trọn vẹn nhất</p>
                         <a href="/home/gallery" class="nav-link bg-white text-stone-900 px-5 py-2 rounded-full font-medium hover:bg-amber-50 transition tracking-wider text-[10px] uppercase inline-block shadow-md" data-target="gallery" data-key="btn_gallery">Xem ảnh mẫu</a>
@@ -108,7 +108,7 @@
                 </div>
             </div>
 
-            <div class="hidden md:block relative w-full h-screen bg-stone-950">
+            <div class="hidden md:block relative w-full h-screen bg-stone-950 overflow-hidden">
                 <div class="absolute inset-0 w-full h-full">
                     <img src="/img/banner1.jpg" alt="Tudu Studio Banner 1" class="pc-slide active object-cover object-top w-full h-full">
                     <img src="/img/banner2.jpg" alt="Tudu Studio Banner 2" class="pc-slide object-cover object-top w-full h-full">
@@ -287,7 +287,7 @@
         </section>
     </main>
 
-    <footer class="bg-stone-900 text-stone-300 py-8 px-6 text-center text-sm">
+    <footer class="bg-stone-900 text-stone-300 py-8 px-6 text-center text-sm w-full box-border">
         <div class="max-w-6xl mx-auto space-y-3">
             <p class="serif text-lg text-white tracking-widest font-bold">TUDU STUDIO</p>
             <p class="text-xs md:text-sm font-medium" data-key="footer_info">Hotline: 0979 807 919 | Email: dung.661999@gmail.com</p>
@@ -397,7 +397,7 @@
                 p1_desc: "Để giữ lịch chụp chính xác, các cậu vui lòng đặt cọc cho tớ khoản phí 200 cá để tớ giữ lịch hẹn cho buổi chụp của chúng mình nha. Lịch chụp chỉ được xác nhận khi tớ đã nhận được khoản cọc của các cậu.",
                 p2_title: "Chính sách hủy / đổi lịch",
                 p2_item1: "<strong>Từ phía Tudu:</strong> Nếu chẳng may tớ bận đột xuất phải huỷ/đổi lịch, tớ sẽ ưu tiên phương án đổi lịch hoặc tìm thợ ảnh khác hỗ trợ cho các cậu. Nếu buộc phải huỷ hoàn toàn, tớ sẽ đền bù x2 giá trị cọc ban đầu (400 cá) nha.",
-                p2_item2: "<strong>From your side:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.",
+                p2_item2: "<strong>Từ phía cậu:</strong> Tớ vẫn ưu tiên phương án đổi lịch hơn. Nếu huỷ từ phía cậu, phí cọc sẽ không được hoàn lại vì tớ đã từ chối các lịch hẹn khác trong khung giờ đó mất rùi.",
                 faq_tag: "Hỗ trợ",
                 faq_title: "Câu hỏi thường gặp (FAQ)",
                 q1: "Studio có hỗ trợ trang điểm (makeup) và làm tóc không?",
